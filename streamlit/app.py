@@ -16,7 +16,7 @@ def load_data():
     fake_csv = encontrar_arquivo("Fake.csv")
     true_csv = encontrar_arquivo("True.csv")
     fake_data = pd.read_csv(fake_csv)
-    true_data = pd.read_csv("True.csv")
+    true_data = pd.read_csv(true_csv)
     return fake_data, true_data
 
 df_fake, df_true = load_data()
