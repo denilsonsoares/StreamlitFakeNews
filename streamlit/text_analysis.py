@@ -6,6 +6,10 @@ from textblob import TextBlob
 from wordcloud import WordCloud
 from sklearn.feature_extraction.text import CountVectorizer
 import matplotlib.pyplot as plt
+import nltk
+
+# Baixar stopwords dinamicamente
+nltk.download('stopwords')
 
 # Função para limpar texto
 def clean_text(text):
