@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from text_analysis import *
 from other_analysis import *
-
+from utils import *
 # Configurar a página
 st.set_page_config(page_title="Fake vs True News Analysis", layout="wide")
 
@@ -13,7 +13,9 @@ st.title("Fake vs True News Analysis")
 # Carregar os arquivos automaticamente
 @st.cache_data
 def load_data():
-    fake_data = pd.read_csv("Fake.csv")
+    fake_csv = encontrar_arquivo("Fake.csv")
+    true_csv = encontrar_arquivo("True.csv")
+    fake_data = pd.read_csv(fake_csv)
     true_data = pd.read_csv("True.csv")
     return fake_data, true_data
 
